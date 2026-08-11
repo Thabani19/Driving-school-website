@@ -1,0 +1,81 @@
+﻿@model IEnumerable<TKDrivingSchool.Models.Instructor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LicenceType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvailabilityStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HourlyRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearsOfExperience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenceType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvailabilityStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HourlyRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearsOfExperience)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HireDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserID })
+        </td>
+    </tr>
+}
+
+</table>

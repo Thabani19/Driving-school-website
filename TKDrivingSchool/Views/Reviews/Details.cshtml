@@ -1,0 +1,90 @@
+﻿@model TKDrivingSchool.Models.Review
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Review</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instructor.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instructor.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.RegistrationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.RegistrationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsApproved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
