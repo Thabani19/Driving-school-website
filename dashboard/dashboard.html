@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | TK Driving School</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>TK Driving School</h2>
+
+        <ul>
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="#">My Profile</a></li>
+            <li><a href="#">Book Lesson</a></li>
+            <li><a href="#">My Bookings</a></li>
+            <li><a href="#">Payments</a></li>
+            <li><a href="#">Lesson Progress</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>Student Dashboard</h1>
+                <p>Welcome back to TK Driving School.</p>
+            </div>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-label">Dark</span>
+                </button>
+
+                <div class="profile" aria-label="Student profile">
+                    <div class="avatar">JS</div>
+                    <div class="profile-text">
+                        <span>John Smith</span>
+                        <small>Student</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="school-banner">
+            <div class="banner-copy">
+                <span class="eyebrow">TK Driving School</span>
+                <h2>Drive with confidence.</h2>
+                <p>Professional driving lessons, road-ready training, and structured support for your next license test.</p>
+            </div>
+
+            <div class="banner-metrics">
+                <div>
+                    <strong>12+</strong>
+                    <span>Years Experience</span>
+                </div>
+                <div>
+                    <strong>98%</strong>
+                    <span>Pass Rate</span>
+                </div>
+                <div>
+                    <strong>4.9/5</strong>
+                    <span>Student Rating</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="cards">
+
+            <div class="card">
+                <h3>Total Lessons</h3>
+                <h2>10</h2>
+                <p>Lessons Purchased</p>
+            </div>
+
+            <div class="card">
+                <h3>Completed</h3>
+                <h2>6</h2>
+                <p>Lessons Completed</p>
+            </div>
+
+            <div class="card">
+                <h3>Remaining</h3>
+                <h2>4</h2>
+                <p>Lessons Left</p>
+            </div>
+
+            <div class="card">
+                <h3>Payments</h3>
+                <h2>R3 500</h2>
+                <p>Total Paid</p>
+            </div>
+
+        </section>
+
+        <section class="feature-row">
+            <div class="mini-card">
+                <span class="mini-label">License Path</span>
+                <h3>Code 8</h3>
+                <p>Urban driving & parking</p>
+            </div>
+            <div class="mini-card">
+                <span class="mini-label">Road Skills</span>
+                <h3>Defensive</h3>
+                <p>Hazard awareness training</p>
+            </div>
+            <div class="mini-card">
+                <span class="mini-label">Test Ready</span>
+                <h3>Progress</h3>
+                <p>68% complete</p>
+            </div>
+        </section>
+
+        <!-- Main Grid -->
+        <div class="dashboard-grid">
+
+            <!-- Left Side -->
+            <div>
+
+                <!-- Upcoming Lesson -->
+                <section class="section">
+
+                    <h2>Upcoming Lesson</h2>
+
+                    <div class="lesson-card">
+
+                        <div class="lesson-info">
+                            <h3>Code 8 Manual</h3>
+
+                            <p><strong>Date:</strong> 15 August 2026</p>
+
+                            <p><strong>Time:</strong> 10:00</p>
+
+                            <p><strong>Instructor:</strong> TK Mokoena</p>
+
+                            <p><strong>Vehicle:</strong> Toyota Corolla</p>
+
+                        </div>
+
+                        <a href="#" class="btn">View Booking</a>
+
+                    </div>
+
+                </section>
+
+                <!-- Booking History -->
+                <section class="section">
+
+                    <h2>Recent Bookings</h2>
+
+                    <table>
+
+                        <tr>
+                            <th>Date</th>
+                            <th>Lesson</th>
+                            <th>Instructor</th>
+                            <th>Status</th>
+                        </tr>
+
+                        <tr>
+                            <td>10 Aug</td>
+                            <td>Code 8 Manual</td>
+                            <td>TK Mokoena</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>15 Aug</td>
+                            <td>Code 8 Manual</td>
+                            <td>TK Mokoena</td>
+                            <td><span class="status pending">Upcoming</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>20 Aug</td>
+                            <td>Code 8 Manual</td>
+                            <td>TK Mokoena</td>
+                            <td><span class="status cancelled">Cancelled</span></td>
+                        </tr>
+
+                    </table>
+
+                </section>
+
+            </div>
+
+            <!-- Right Side -->
+            <div>
+
+                <!-- Quick Actions -->
+                <section class="section">
+
+                    <h2>Quick Actions</h2>
+
+                    <p><a href="#" class="btn">Book Lesson</a></p>
+
+                    <br>
+
+                    <p><a href="#" class="btn">Make Payment</a></p>
+
+                    <br>
+
+                    <p><a href="#" class="btn">Track Progress</a></p>
+
+                </section>
+
+                <!-- Payment Summary -->
+                <section class="section">
+
+                    <h2>Payment Summary</h2>
+
+                    <div class="payment">
+                        <span>Total Package</span>
+                        <strong>R3 500</strong>
+                    </div>
+
+                    <div class="payment">
+                        <span>Paid</span>
+                        <strong>R3 500</strong>
+                    </div>
+
+                    <div class="payment">
+                        <span>Outstanding</span>
+                        <strong>R0</strong>
+                    </div>
+
+                </section>
+
+                <section class="section progress-panel">
+                    <h2>Driving Progress</h2>
+
+                    <div class="progress-item">
+                        <label>Parking & Manoeuvres</label>
+                        <div class="progress-bar"><span style="width: 82%"></span></div>
+                    </div>
+
+                    <div class="progress-item">
+                        <label>Road Rules</label>
+                        <div class="progress-bar"><span style="width: 76%"></span></div>
+                    </div>
+
+                    <div class="progress-item">
+                        <label>Defensive Driving</label>
+                        <div class="progress-bar"><span style="width: 68%"></span></div>
+                    </div>
+                </section>
+
+                <!-- Notifications -->
+                <section class="section">
+
+                    <h2>Notifications</h2>
+
+                    <div class="notification">
+                        Lesson booking confirmed for 15 August at 10:00.
+                    </div>
+
+                    <div class="notification">
+                        Payment received successfully.
+                    </div>
+
+                    <div class="notification">
+                        Your instructor has been assigned.
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 TK Driving School. All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
