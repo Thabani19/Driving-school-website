@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | TK Driving School</title>
+
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+
+    <style>
+
+        .profile-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-header {
+            background: #b30000;
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .profile-header h2 {
+            margin-bottom: 8px;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        }
+
+        .profile-section {
+            margin-bottom: 30px;
+        }
+
+        .profile-section h3 {
+            color: #b30000;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #b30000;
+        }
+
+        .form-group input:disabled,
+        .form-group select:disabled {
+            background: #f3f3f3;
+            cursor: not-allowed;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .save-btn {
+            background: #b30000;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .save-btn:hover {
+            background: #8d0000;
+        }
+
+        .cancel-btn {
+            background: white;
+            color: #b30000;
+            border: 2px solid #b30000;
+            padding: 11px 25px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .success-message {
+            display: none;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 12px;
+            border-radius: 7px;
+            margin-bottom: 20px;
+        }
+
+        @media(max-width: 700px) {
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-actions {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>TK Driving School</h2>
+
+        <ul>
+
+            <li>
+                <a href="../dashboard/dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html" class="active">
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Book Lesson
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    My Bookings
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Payments
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Lesson Progress
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Notifications
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Reviews
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="logout">
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="header">
+
+            <div>
+
+                <h1>My Profile</h1>
+
+                <p>Manage your personal information.</p>
+
+            </div>
+
+            <div class="profile">
+
+                <span id="headerName">
+                    Student
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <div class="profile-container">
+
+            <div class="profile-header">
+
+                <h2 id="profileName">
+                    Student Profile
+                </h2>
+
+                <p>
+                    Your personal information and driving school details.
+                </p>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <div
+                    id="successMessage"
+                    class="success-message">
+                    Profile updated successfully.
+                </div>
+
+
+                <!-- Personal Information -->
+
+                <section class="profile-section">
+
+                    <h3>Personal Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="idNumber">
+                                ID Number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="idNumber"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="address">
+                                Address
+                            </label>
+
+                            <input
+                                type="text"
+                                id="address"
+                                disabled>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Driving Information -->
+
+                <section class="profile-section">
+
+                    <h3>Driving Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="licenseType">
+                                Licence Type
+                            </label>
+
+                            <select
+                                id="licenseType"
+                                disabled>
+
+                                <option value="">
+                                    Select Licence Type
+                                </option>
+
+                                <option value="Code 8">
+                                    Code 8
+                                </option>
+
+                                <option value="Code 10">
+                                    Code 10
+                                </option>
+
+                                <option value="Code 14">
+                                    Code 14
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Buttons -->
+
+                <div class="profile-actions">
+
+                    <button
+                        class="save-btn"
+                        id="editBtn">
+
+                        Edit Profile
+
+                    </button>
+
+                    <button
+                        class="cancel-btn"
+                        id="cancelBtn"
+                        style="display:none;">
+
+                        Cancel
+
+                    </button>
+
+                    <button
+                        class="cancel-btn"
+                        id="signOutBtn"
+                        style="background: #b91c1c; color: white; border: none; margin-left: auto;">
+
+                        Sign Out
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <footer class="footer">
+
+            <p>
+                &copy; 2026 TK Driving School. All Rights Reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="profile.js"></script>
+
+</body>
+
+</html>

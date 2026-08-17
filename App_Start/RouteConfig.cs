@@ -12,6 +12,14 @@ namespace DrivingSchoolLandingPage
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            
+            // Ignore static file extensions
+            routes.IgnoreRoute("{*allhtml}", new { allhtml = @".*\.html$" });
+            routes.IgnoreRoute("{*allcss}", new { allcss = @".*\.css$" });
+            routes.IgnoreRoute("{*alljs}", new { alljs = @".*\.js$" });
+            routes.IgnoreRoute("{*allpng}", new { allpng = @".*\.png$" });
+            routes.IgnoreRoute("{*alljpg}", new { alljpg = @".*\.jpg$" });
+            routes.IgnoreRoute("{*allico}", new { allico = @".*\.ico$" });
 
             routes.MapRoute(
                 name: "Default",

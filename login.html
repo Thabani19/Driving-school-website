@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | TK Driving School</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #0b1c3d, #1e3a6d);
+        }
+        .frame { width: 100%; min-height: 100vh; display: flex; }
+        .brand {
+            width: 50%; background: linear-gradient(135deg, #0b1c3d, #1e3a6d);
+            color: white; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 40px;
+        }
+        .brand h2 { font-family: 'Oswald', sans-serif; font-size: 64px; letter-spacing: 2px; margin: 0 0 15px; line-height: 1.1; }
+        .brand p { font-size: 18px; color: #d1d5db; font-style: italic; }
+        .form-panel {
+            width: 50%; background: #f3f4f6; display: flex; flex-direction: column;
+            justify-content: center; padding: 60px;
+        }
+        .form-head { margin-bottom: 30px; }
+        .form-head h1 { font-family: 'Oswald', sans-serif; font-size: 46px; margin: 0 0 10px; color: #0f172a; }
+        .form-head p { color: #6b7280; margin: 0; }
+        .form-head a { color: #b91c1c; text-decoration: none; font-weight: 600; }
+        .field { margin-bottom: 20px; }
+        .field label { display: block; margin-bottom: 8px; font-weight: 600; color: #0f172a; }
+        .field input {
+            width: 100%; padding: 13px 14px; border: 1px solid #d1d5db; border-radius: 6px;
+            font-size: 15px; outline: none; background: white;
+        }
+        .field input:focus { border-color: #b91c1c; }
+        .pw-wrap { position: relative; }
+        .pw-wrap input { padding-right: 75px; }
+        .pw-toggle {
+            position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+            border: none; background: none; color: #b91c1c; font-weight: 700; cursor: pointer;
+        }
+        .row-between {
+            display: flex; justify-content: space-between; align-items: center; margin: 15px 0 25px;
+        }
+        .remember { font-size: 14px; color: #4b5563; }
+        .remember input { margin-right: 6px; }
+        .forgot-btn {
+            border: none; background: none; color: #b91c1c; cursor: pointer; font-weight: 600;
+        }
+        .submit {
+            width: 100%; padding: 14px; border: none; border-radius: 6px; background: #0b1c3d;
+            color: white; font-size: 16px; font-weight: 600; cursor: pointer;
+        }
+        .submit:hover { background: #142a56; }
+        .message {
+            display: none; padding: 12px 14px; border-radius: 6px; margin-bottom: 18px; font-size: 14px;
+        }
+        .message.error { display: block; background: #fee2e2; color: #991b1b; }
+        .message.success { display: block; background: #dcfce7; color: #166534; }
+        @media (max-width: 768px) {
+            .frame { flex-direction: column; }
+            .brand, .form-panel { width: 100%; }
+            .brand { min-height: 250px; }
+            .brand h2 { font-size: 36px; }
+            .form-panel { padding: 35px 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="brand">
+            <h2>TK DRIVING SCHOOL</h2>
+            <p>Learn to drive with confidence.</p>
+        </div>
+
+        <div class="form-panel">
+            <div class="form-head">
+                <h1>Sign in</h1>
+                <p>New to TK Driving School? <a href="register.html">Register account</a></p>
+            </div>
+
+            <div id="loginMessage" class="message"></div>
+
+            <form id="loginForm">
+                <div class="field">
+                    <label for="loginEmail">Email</label>
+                    <input id="loginEmail" type="email" placeholder="name@example.com" required />
+                </div>
+
+                <div class="field">
+                    <label for="loginPassword">Password</label>
+                    <div class="pw-wrap">
+                        <input id="loginPassword" type="password" placeholder="Enter your password" required />
+                        <button type="button" class="pw-toggle" onclick="const i=document.getElementById('loginPassword'); i.type = i.type === 'password' ? 'text' : 'password'; this.textContent = i.type === 'password' ? 'SHOW' : 'HIDE';">SHOW</button>
+                    </div>
+                </div>
+
+                <div class="row-between">
+                    <label class="remember">
+                        <input type="checkbox" /> Remember me
+                    </label>
+                    <button type="button" class="forgot-btn">Forgot password?</button>
+                </div>
+
+                <button type="submit" class="submit">Sign in</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Scripts/auth.js"></script>
+</body>
+</html>

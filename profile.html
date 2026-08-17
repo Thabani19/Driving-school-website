@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile | TK Driving School</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; 
+            min-height: 100vh; 
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #0b1c3d, #1e3a6d);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #0f172a;
+            font-size: 28px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0b1c3d, #1e3a6d);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .profile-intro h2 {
+            margin: 0 0 10px 0;
+            color: #0f172a;
+            font-size: 32px;
+        }
+
+        .profile-intro p {
+            margin: 5px 0;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .info-field {
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #b91c1c;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #6b7280;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: #0f172a;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .lessons-section {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .lessons-section h3 {
+            margin: 0 0 15px 0;
+            color: #0f172a;
+        }
+
+        .lessons-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .lesson-stat {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+        }
+
+        .lesson-stat .number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #b91c1c;
+            margin-bottom: 5px;
+        }
+
+        .lesson-stat .label {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #0b1c3d;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #142a56;
+        }
+
+        .btn-danger {
+            background: #b91c1c;
+            color: white;
+            margin-left: auto;
+        }
+
+        .btn-danger:hover {
+            background: #991b1b;
+        }
+
+        .not-logged-in {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .not-logged-in h2 {
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .not-logged-in a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #0b1c3d;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .not-logged-in a:hover {
+            background: #142a56;
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lessons-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn-danger {
+                margin-left: 0;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>User Profile</h1>
+            <a href="dashboard/dashboard.html" class="btn btn-primary">Back to Dashboard</a>
+        </div>
+
+        <div id="profileContent"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = localStorage.getItem('currentUser');
+            const profileContent = document.getElementById('profileContent');
+
+            if (!currentUser) {
+                profileContent.innerHTML = `
+                    <div class="not-logged-in">
+                        <h2>You are not logged in</h2>
+                        <p>Please log in to view your profile.</p>
+                        <a href="login.html">Go to Login</a>
+                    </div>
+                `;
+                return;
+            }
+
+            const user = JSON.parse(currentUser);
+            const initials = (user.firstName.charAt(0) + user.lastName.charAt(0)).toUpperCase();
+            const createdDate = new Date(user.createdAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            profileContent.innerHTML = `
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">${initials}</div>
+                        <div class="profile-intro">
+                            <h2>${user.firstName} ${user.lastName}</h2>
+                            <p><strong>Email:</strong> ${user.email}</p>
+                            <p><strong>Member since:</strong> ${createdDate}</p>
+                        </div>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-field">
+                            <div class="info-label">Phone Number</div>
+                            <div class="info-value">${user.phone}</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="info-label">Date of Birth</div>
+                            <div class="info-value">${new Date(user.dateOfBirth).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="info-label">Address</div>
+                            <div class="info-value">${user.address}</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="info-label">City</div>
+                            <div class="info-value">${user.city}</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="info-label">Postcode</div>
+                            <div class="info-value">${user.postcode}</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="info-label">Account Status</div>
+                            <div class="info-value" style="color: #059669;">Active</div>
+                        </div>
+                    </div>
+
+                    <div class="lessons-section">
+                        <h3>Lessons Progress</h3>
+                        <div class="lessons-stats">
+                            <div class="lesson-stat">
+                                <div class="number">${user.lessons.total}</div>
+                                <div class="label">Total Lessons</div>
+                            </div>
+                            <div class="lesson-stat">
+                                <div class="number">${user.lessons.completed}</div>
+                                <div class="label">Completed</div>
+                            </div>
+                            <div class="lesson-stat">
+                                <div class="number">${user.lessons.remaining}</div>
+                                <div class="label">Remaining</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="window.location.href='dashboard/dashboard.html'">
+                            Back to Dashboard
+                        </button>
+                        <button class="btn btn-danger" onclick="signOut()">
+                            Sign Out
+                        </button>
+                    </div>
+                </div>
+            `;
+        });
+
+        function signOut() {
+            if (confirm('Are you sure you want to sign out?')) {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+</html>

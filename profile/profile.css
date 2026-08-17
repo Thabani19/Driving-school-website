@@ -1,0 +1,273 @@
+/* ========================================
+   TK Driving School
+   Student Profile Styles
+======================================== */
+
+
+/* ========================================
+   Profile Container
+======================================== */
+
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   Profile Header
+======================================== */
+
+.profile-header {
+    background: #b30000;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.profile-header h2 {
+    margin-bottom: 8px;
+    font-size: 26px;
+}
+
+.profile-header p {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+
+/* ========================================
+   Profile Card
+======================================== */
+
+.profile-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================
+   Profile Sections
+======================================== */
+
+.profile-section {
+    margin-bottom: 35px;
+}
+
+.profile-section h3 {
+    color: #b30000;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eeeeee;
+}
+
+
+/* ========================================
+   Form Grid
+======================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* ========================================
+   Form Groups
+======================================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444444;
+}
+
+
+/* ========================================
+   Input Fields
+======================================== */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d2d2d2;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #333333;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+/* Input Focus */
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #b30000;
+    box-shadow: 0 0 0 2px rgba(179, 0, 0, 0.08);
+}
+
+
+/* Disabled Fields */
+
+.form-group input:disabled,
+.form-group select:disabled {
+    background: #f3f3f3;
+    color: #555555;
+    cursor: not-allowed;
+}
+
+
+/* ========================================
+   Profile Actions
+======================================== */
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+
+/* Edit / Save Button */
+
+.save-btn {
+    background: #b30000;
+    color: #ffffff;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.save-btn:hover {
+    background: #8d0000;
+}
+
+
+/* Cancel Button */
+
+.cancel-btn {
+    background: #ffffff;
+    color: #b30000;
+    border: 2px solid #b30000;
+    padding: 11px 25px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cancel-btn:hover {
+    background: #b30000;
+    color: #ffffff;
+}
+
+
+/* ========================================
+   Success Message
+======================================== */
+
+.success-message {
+    display: none;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #2e7d32;
+    padding: 13px 15px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   Profile Name
+======================================== */
+
+#profileName {
+    text-transform: capitalize;
+}
+
+
+/* ========================================
+   Header Profile Name
+======================================== */
+
+#headerName {
+    font-weight: 600;
+    color: #333333;
+}
+
+
+/* ========================================
+   Responsive Design
+======================================== */
+
+@media (max-width: 768px) {
+
+    .profile-container {
+        width: 100%;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-header {
+        padding: 25px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ========================================
+   Small Screens
+======================================== */
+
+@media (max-width: 480px) {
+
+    .profile-card {
+        padding: 15px;
+    }
+
+    .profile-header {
+        padding: 20px;
+    }
+
+    .profile-header h2 {
+        font-size: 22px;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .save-btn,
+    .cancel-btn {
+        width: 100%;
+    }
+
+}
